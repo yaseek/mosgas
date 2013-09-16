@@ -1,0 +1,297 @@
+
+@font-face  {
+    font-family: MyriadProCond;
+    src:    url(/css/fonts/MyriadPro-Cond.ttf);
+}
+
+@font-face  {
+    font-family: MyriadProBoldCond;
+    src:    url(/css/fonts/MyriadPro-BoldCond.ttf);
+}
+
+@font-face  {
+    font-family: MyriadPro-BoldCondIt;
+    src:    url(/css/fonts/MyriadPro-BoldCondIt.ttf);
+}
+
+@font-face  {
+    font-family: PTSans;
+    src:    url(/css/fonts/PTN57F.ttf);
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #444444;
+}
+
+div {
+    display: block;
+}
+
+.wrapper    {
+    margin: 0 auto;
+    width: 1100px;
+}
+
+.content {
+    display: block;
+    padding: 40px 100px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #2f2f2f;
+    background-image: url(/img/bg.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5em 1em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.orange {
+    color: #fef4e9;
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+    background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+    background: #f47c20;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+    background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+    color: #fcd3a5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+    background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+.buybutton {
+     margin: 14px 0 0; 
+     padding: 5px;
+}
+.f12 {
+    font-size: 12px;
+}
+.f14 {
+    font-size: 14px;
+}
+.f24 {
+    font-size: 24px;
+}
+.f26 {
+    font-size: 26px;
+}
+.f28 {
+    font-size: 28px;
+}
+.f30 {
+    font-size: 30px;
+}
+.f39 {
+    font-size: 39px;
+}
+.f41 {
+    font-size: 41px;
+}
+
+.left {
+    display: inline-block;
+    float: left;
+}
+
+.right {
+    display: inline-block;
+    float: right;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.myriadprocond {
+    font-family: MyriadProCond;
+}
+
+.myriadproboldcond {
+    font-family: MyriadProBoldCond;
+}
+
+.myriadproboldcondit {
+    font-family: MyriadPro-BoldCondIt;
+}
+
+.ptsans {
+    font-family: PTSans;
+}
+
+.a3a3a3 {
+    color: #a3a3a3;
+}
+
+.b3b3b3 {
+    color: #b3b3b3;
+}
+
+.c7f7f7f {
+    color: #7f7f7f;
+}
+
+.w100p {
+    width: 100%;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.form {
+    background-color: #e6e5e5;
+    padding: 20px 0 35px;
+}
+
+.form input {
+    border-color: transparent;
+    border-width: 0;
+    margin: 3px 0;
+    width: 228px;
+    padding: 10px;
+    padding-left: 32px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    font-style: italic;
+}
+
+.form input.person {
+    background-image: url(/img/person.png);
+}
+.form input.globe {
+    background-image: url(/img/globe.png);
+}
+.form input.phone {
+    background-image: url(/img/phone.png);
+}
+
+.lh30 {
+    line-height: 30px;
+}
+
+ul.spec {
+    padding-left: 10px;
+    margin: 40px 0;
+}
+ul.spec li {
+    list-style-image: url(/img/check.png);
+    font-size: 16px;
+    font-style: italic;
+    color: #767676;
+    margin: 10px 0;
+}
+
+.table-wrap {
+    display: table;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.row-wrap {
+    display: table-row;
+}
+
+.column-wrap {
+    display: table-cell;
+    vertical-align: top;
+    text-align: center;
+}
+.delimiter {
+    background-image: url(/img/y_dash.png);
+    background-repeat: repeat-y;
+    background-position: center center;
+    display: table-cell;
+    width: 60px;
+}
+.buyblock {
+    text-align: center;
+    height: 250px;
+    padding-top: 10px;
+}
+
+.buyblock .subscribe {
+    font-family: MyriadPro-BoldCondIt;
+    font-size: 22px;
+    color: black;
+}
+
+.buyblock .montage {
+    font-style: italic;
+    color: #c4c4c4;
+}
+
+.price {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.price .text {
+    height: 75px;
+}
+
+.regular, .profit {
+    padding: 3px 0;
+}
+
+.regular .key {
+    color: #aaaaa9;
+}
+.regular .value {
+    color: #656565;
+}
+.profit .key {
+    color: #848484;
+}
+.profit .value {
+    color: #656565;
+    font-weight: bold;
+}
