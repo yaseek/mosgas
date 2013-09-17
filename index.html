@@ -4,7 +4,7 @@
         <title>МОСГАЗИФИКАЦИЯ.РФ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/kendo.core.min.js"></script>
         <script type="text/javascript" src="/js/kendo.data.min.js"></script>
         <script type="text/javascript" src="/js/kendo.data.odata.min.js"></script>
@@ -26,7 +26,7 @@
                         <span class="f24 c7f7f7f">Тел.</span>
                         <span class="f26">(495) 233-88-72</span>
                     </div>
-                    <button class="button orange w100p">Заказать звонок</button>
+                    <button id="requestcall" class="button orange w100p">Заказать звонок</button>
                 </div>
                 <div class="clear"></div>
                 
@@ -45,10 +45,10 @@
                             <div class="f12 center italic b3b3b3" style="padding:15px 0 20px">Наш менеджер перезвонит Вам в ближайшее время</div>
                             <div class="center">
                                 <div class="" style="width: 270px; margin: 0 auto;">
-                                    <input class="person" placeholder="Ваше имя" />
-                                    <input class="globe" placeholder="Ваш город" />
-                                    <input class="phone" placeholder="Ваш телефон" />
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton">Заказать!</button>
+                                    <input class="person" placeholder="Ваше имя" data-bind="value: name" />
+                                    <input class="globe" placeholder="Ваш город" data-bind="value: city" />
+                                    <input class="phone" placeholder="Ваш телефон" data-bind="value: phone" />
+                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="click: commit">Заказать!</button>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                         <span class="value">от 30 000 руб.</span>
                                     </div>
                                 </div>
-                                <button class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
+                                <button id="buy_1" class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
                             </div>
                         </div>
                         <div class="delimiter"></div>
@@ -119,7 +119,7 @@
                                         <span class="value">от 40 000 руб.</span>
                                     </div>
                                 </div>
-                                <button class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
+                                <button id="buy_2" class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
                             </div>
                         </div>
                         <div class="delimiter"></div>
@@ -150,7 +150,7 @@
                                         <span class="value">от 50 000 руб.</span>
                                     </div>
                                 </div>
-                                <button class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
+                                <button id="buy_3" class="w100p button orange myriadproboldcondit f28 buybutton">Купить</button>
                             </div>
                         </div>
                     </div>
@@ -189,10 +189,10 @@
                             <div class="f12 center italic b3b3b3" style="padding:15px 0 20px">Наш менеджер перезвонит Вам в ближайшее время</div>
                             <div class="center">
                                 <div class="" style="width: 270px; margin: 0 auto;">
-                                    <input class="person" placeholder="Ваше имя" />
-                                    <input class="globe" placeholder="Ваш город" />
-                                    <input class="phone" placeholder="Ваш телефон" />
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton">Заказать!</button>
+                                    <input class="person" placeholder="Ваше имя" data-bind="value: name" />
+                                    <input class="globe" placeholder="Ваш город" data-bind="value: city" />
+                                    <input class="phone" placeholder="Ваш телефон" data-bind="value: phone" />
+                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="click: commit">Заказать!</button>
                                 </div>
                             </div>
                         </div>
