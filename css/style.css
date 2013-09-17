@@ -1,9 +1,17 @@
 
 @font-face  {
     font-family: MyriadProCond;
+    src:    url(/css/fonts/MyriadPro-Cond.eot);
+}
+@font-face  {
+    font-family: MyriadProCond;
     src:    url(/css/fonts/MyriadPro-Cond.ttf);
 }
 
+@font-face  {
+    font-family: MyriadProBoldCond;
+    src:    url(/css/fonts/MyriadPro-BoldCond.eot);
+}
 @font-face  {
     font-family: MyriadProBoldCond;
     src:    url(/css/fonts/MyriadPro-BoldCond.ttf);
@@ -11,9 +19,18 @@
 
 @font-face  {
     font-family: MyriadPro-BoldCondIt;
+    src:    url(/css/fonts/MyriadPro-BoldCondIt.eot);
+}
+@font-face  {
+    font-family: MyriadPro-BoldCondIt;
     src:    url(/css/fonts/MyriadPro-BoldCondIt.ttf);
 }
 
+@font-face  {
+    font-family: MyriadProWeb;
+    src:    url(/css/fonts/Myriad-Web-Pro-Regular.ttf);
+}
+ 
 @font-face  {
     font-family: PTSans;
     src:    url(/css/fonts/PTN57F.ttf);
@@ -148,15 +165,15 @@ div {
 }
 
 .myriadprocond {
-    font-family: MyriadProCond;
+    font-family: MyriadProCond, MyriadProWeb, Arial;
 }
 
 .myriadproboldcond {
-    font-family: MyriadProBoldCond;
+    font-family: MyriadProBoldCond, MyriadProWeb, Arial;
 }
 
 .myriadproboldcondit {
-    font-family: MyriadPro-BoldCondIt;
+    font-family: MyriadPro-BoldCondIt, MyriadProWeb, Arial;
 }
 
 .ptsans {
@@ -258,7 +275,7 @@ ul.spec li {
 }
 
 .buyblock .subscribe {
-    font-family: MyriadPro-BoldCondIt;
+    font-family: MyriadPro-BoldCondIt, MyriadProWeb, Arial;
     font-size: 22px;
     color: black;
 }
