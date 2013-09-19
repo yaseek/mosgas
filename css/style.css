@@ -1,36 +1,24 @@
 
 @font-face  {
     font-family: MyriadProCond;
-    src:    url(/css/fonts/MyriadPro-Cond.eot);
-}
-@font-face  {
-    font-family: MyriadProCond;
     src:    url(/css/fonts/MyriadPro-Cond.ttf);
 }
-
 @font-face  {
-    font-family: MyriadProBoldCond;
-    src:    url(/css/fonts/MyriadPro-BoldCond.eot);
-}
-@font-face  {
-    font-family: MyriadProBoldCond;
+    font-family: "MyriadProBoldCond";
     src:    url(/css/fonts/MyriadPro-BoldCond.ttf);
-}
-
-@font-face  {
-    font-family: MyriadPro-BoldCondIt;
-    src:    url(/css/fonts/MyriadPro-BoldCondIt.eot);
 }
 @font-face  {
     font-family: MyriadPro-BoldCondIt;
     src:    url(/css/fonts/MyriadPro-BoldCondIt.ttf);
 }
-
 @font-face  {
     font-family: MyriadProWeb;
     src:    url(/css/fonts/Myriad-Web-Pro-Regular.ttf);
 }
- 
+@font-face  {
+    font-family: PFDinTextCondPro-Medium;
+    src:    url(/css/fonts/PFDinTextCondPro-Medium.ttf);
+}
 @font-face  {
     font-family: PTSans;
     src:    url(/css/fonts/PTN57F.ttf);
@@ -43,7 +31,7 @@ html, body {
 }
 
 body {
-    background-color: #444444;
+    background-color: white;
 }
 
 div {
@@ -123,6 +111,9 @@ div {
 .f14 {
     font-size: 14px;
 }
+.f16 {
+    font-size: 16px;
+}
 .f24 {
     font-size: 24px;
 }
@@ -134,6 +125,9 @@ div {
 }
 .f30 {
     font-size: 30px;
+}
+.f34 {
+    font-size: 34px;
 }
 .f39 {
     font-size: 39px;
@@ -164,12 +158,16 @@ div {
     text-align: center;
 }
 
+.pfdin {
+    font-family: PFDinTextCondPro-Medium, Arial;
+}
+
 .myriadprocond {
     font-family: MyriadProCond, MyriadProWeb, Arial;
 }
 
 .myriadproboldcond {
-    font-family: MyriadProBoldCond, MyriadProWeb, Arial;
+    font-family: "MyriadProBoldCond", MyriadProWeb, Arial;
 }
 
 .myriadproboldcondit {
@@ -297,6 +295,7 @@ ul.spec li {
 
 .regular, .profit {
     padding: 3px 0;
+    color: #aaaaa9;
 }
 
 .regular .key {
