@@ -4,12 +4,16 @@
         <title>МОСГАЗИФИКАЦИЯ.РФ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
+        <link rel="stylesheet" href="/css/kendo.common.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/kendo.default.min.css" type="text/css" />
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/kendo.core.min.js"></script>
         <script type="text/javascript" src="/js/kendo.data.min.js"></script>
         <script type="text/javascript" src="/js/kendo.data.odata.min.js"></script>
         <script type="text/javascript" src="/js/kendo.binder.min.js"></script>
+        <script type="text/javascript" src="/js/kendo.userevents.min.js"></script>
+        <script type="text/javascript" src="/js/kendo.validator.min.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
     </head>
     <body>
@@ -46,13 +50,31 @@
                             <div class="f12 center italic b3b3b3" style="padding:15px 0 20px">Наш менеджер перезвонит Вам в ближайшее время</div>
                             <div class="center">
                                 <div class="" style="width: 270px; margin: 0 auto;">
-                                    <input type="text" class="person" placeholder="Ваше имя" data-bind="value: name" />
-                                    <input type="text" class="globe" placeholder="Ваш город" data-bind="value: city" />
-                                    <input type="text" class="phone" placeholder="Ваш телефон" data-bind="value: phone" />
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="click: commit">Заказать!</button>
+                                    <div class="input person">
+                                        <input type="text" 
+                                               validationMessage="Сообщите Ваше имя"
+                                               placeholder="Ваше имя" 
+                                               data-bind="value: name" />
+                                    </div>
+                                    <div class="input globe">
+                                        <input type="text"
+                                               validationMessage="Укажите Ваш город"
+                                               placeholder="Ваш город" 
+                                               data-bind="value: city" />
+                                    </div>
+                                    <div class="input phone">
+                                        +7
+                                        <input type="text" 
+                                               placeholder="Ваш телефон" 
+                                               pattern="\d{10}" 
+                                               validationMessage="Введите 10-значный номер мобильного телефона"
+                                               data-bind="value: phone" 
+                                               style="width: auto"/>
+                                    </div>
+                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказать!</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- FORM -->
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -190,18 +212,46 @@
                             <div class="f12 center italic b3b3b3" style="padding:15px 0 20px">Наш менеджер перезвонит Вам в ближайшее время</div>
                             <div class="center">
                                 <div class="" style="width: 270px; margin: 0 auto;">
-                                    <input class="person" placeholder="Ваше имя" data-bind="value: name" />
-                                    <input class="globe" placeholder="Ваш город" data-bind="value: city" />
-                                    <input class="phone" placeholder="Ваш телефон" data-bind="value: phone" />
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="click: commit">Заказать!</button>
+                                    <div class="input person">
+                                        <input type="text" 
+                                               validationMessage="Сообщите Ваше имя"
+                                               placeholder="Ваше имя" 
+                                               data-bind="value: name" />
+                                    </div>
+                                    <div class="input globe">
+                                        <input type="text"
+                                               validationMessage="Укажите Ваш город"
+                                               placeholder="Ваш город" 
+                                               data-bind="value: city" />
+                                    </div>
+                                    <div class="input phone">
+                                        +7
+                                        <input type="text" 
+                                               placeholder="Ваш телефон" 
+                                               pattern="\d{10}" 
+                                               validationMessage="Введите 10-значный номер мобильного телефона"
+                                               data-bind="value: phone" 
+                                               style="width: auto"/>
+                                    </div>
+                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказать!</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- FORM -->
                     </div>
                     <div class="clear"></div>
                 </div>
                 
             </div>
+        </div>
+        <div class="hidden" style="display: none">
+            
+            <div id="template-message">
+                <span class="k-widget k-tooltip k-tooltip-validation k-invalid-msg" data-for="" role="alert">
+                    <span class="k-icon k-warning"> </span>
+                    ${text}
+                </span>
+            </div>
+            
         </div>
     </body>
 </html>

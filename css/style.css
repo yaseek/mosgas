@@ -203,27 +203,38 @@ div {
     padding: 20px 0 35px;
 }
 
-.form input {
+.form .input {
+    background-color: white;
     border-color: transparent;
-    border-width: 0;
-    margin: 3px 0;
+    border-width: 2px;
+    margin: 5px 0;
     width: 228px;
-    padding: 10px;
-    padding-left: 32px;
+    padding: 8px;
+    padding-left: 30px;
     border-radius: 5px;
     background-repeat: no-repeat;
     background-position: 10px center;
-    font-style: italic;
+    text-align: left;
+    position: relative;
 }
 
-.form input.person {
+.form .input.person {
     background-image: url(/img/person.png);
 }
-.form input.globe {
+.form .input.globe {
     background-image: url(/img/globe.png);
 }
-.form input.phone {
+.form .input.phone {
     background-image: url(/img/phone.png);
+}
+
+.input input {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-color: white;
+    width: 100%;
 }
 
 .lh30 {
@@ -310,4 +321,10 @@ ul.spec li {
 .profit .value {
     color: #656565;
     font-weight: bold;
+}
+
+.k-widget.k-tooltip.k-tooltip-validation {
+    position: absolute;
+    left: 30px;
+    top: 30px;
 }
