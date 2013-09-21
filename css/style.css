@@ -30,8 +30,14 @@ html, body {
     padding: 0;
 }
 
-body {
+html {
     background-color: white;
+}
+
+body {
+    background-image: url(/img/html_bg.png);
+    background-position: left top;
+    background-repeat: repeat-x;
 }
 
 div {
@@ -129,6 +135,9 @@ div {
 .f34 {
     font-size: 34px;
 }
+.f36 {
+    font-size: 36px;
+}
 .f39 {
     font-size: 39px;
 }
@@ -146,8 +155,11 @@ div {
     float: right;
 }
 
+.left-align {
+    text-align: left !important;
+}
 .right-align {
-    text-align: right;
+    text-align: right !important;
 }
 
 .clear {
@@ -156,6 +168,10 @@ div {
 
 .center {
     text-align: center;
+}
+
+.justify    {
+    text-align: justify;
 }
 
 .pfdin {
@@ -207,15 +223,22 @@ div {
     background-color: white;
     border-color: transparent;
     border-width: 2px;
-    margin: 5px 0;
+    margin: 3px 0;
     width: 228px;
     padding: 8px;
-    padding-left: 30px;
+    padding-left: 35px;
     border-radius: 5px;
     background-repeat: no-repeat;
     background-position: 10px center;
     text-align: left;
+}
+
+.relative {
     position: relative;
+}
+
+.errors {
+    box-shadow: 0 0 5px 0 red;
 }
 
 .form .input.person {
@@ -228,7 +251,7 @@ div {
     background-image: url(/img/phone.png);
 }
 
-.input input {
+.input {
     font-style: italic;
     margin: 0;
     padding: 0;
@@ -248,7 +271,7 @@ ul.spec {
 ul.spec li {
     list-style-image: url(/img/check.png);
     font-size: 16px;
-    font-style: italic;
+    /*font-style: italic;*/
     color: #767676;
     margin: 10px 0;
 }
@@ -275,7 +298,7 @@ ul.spec li {
     background-repeat: repeat-y;
     background-position: center center;
     display: table-cell;
-    width: 60px;
+    width: 40px;
 }
 .buyblock {
     text-align: center;
