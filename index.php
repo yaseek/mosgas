@@ -4,6 +4,10 @@
         <title>МОСГАЗИФИКАЦИЯ.РФ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
+        <script type="text/javascript">
+            window.referer = "<?=$_SERVER['HTTP_REFERER']?>";
+        </script>
+        
         <link rel="stylesheet" href="/css/kendo.common.min.css" type="text/css" />
         <link rel="stylesheet" href="/css/kendo.default.min.css" type="text/css" />
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
@@ -15,10 +19,8 @@
         <script type="text/javascript" src="/js/kendo.binder.min.js"></script>
         <script type="text/javascript" src="/js/kendo.userevents.min.js"></script>
         <script type="text/javascript" src="/js/kendo.validator.min.js"></script>
+        <script type="text/javascript" src="/js/model.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
-        <script type="text/javascript">
-            window.referer = "<?=$_SERVER['HTTP_REFERER']?>";
-        </script>
     </head>
     <body>
         <div class="wrapper">
@@ -39,12 +41,12 @@
                         обслуживающих газовое хозяйство
                     </div>
                 </div>
-                <div class="right">
-                    <div class="myriadprocond right-align" style="padding: 5px 0">
-                        <span class="f24 c7f7f7f">Тел.</span>
+                <div class="right" style="width: 197px;" >
+                    <div class="right-align wait-fonts" style="height: 32px; padding: 5px 0">
+                        <span class="f24 myriadprocond c7f7f7f">Тел.</span>
                         <span class="f26 pfdin">(495) 233-88-72</span>
                     </div>
-                    <button id="requestcall" class="button orange w100p">Заказать звонок</button>
+                    <button id="requestcall" class="f20 pfdin button orange w100p">Заказать звонок</button>
                 </div>
                 <div class="clear"></div>
                 
@@ -93,7 +95,7 @@
                                                validationMessage="Укажите Ваш телефон"
                                                data-bind="value: phone" />
                                     </div>
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказ пробной партии</button>
+                                    <button class="w100p button orange myriadproboldcond f28 buybutton" data-bind="disabled: messageSent, click: commit">Отправить!</button>
                                 </div>
                             </div>
                         </div> <!-- FORM -->
@@ -136,7 +138,7 @@
                                         <span class="value">от 30 000 руб.</span>
                                     </div>
                                 </div>
-                                <button id="buy_1" class="w100p button myriadproboldcond orange f28 buybutton">Купить</button>
+                                <button id="buy_1" class="w100p button myriadproboldcond orange f28 buybutton">Заказать</button>
                             </div>
                         </div>
                         <div class="delimiter"></div>
@@ -164,7 +166,7 @@
                                         <span class="value">от 40 000 руб.</span>
                                     </div>
                                 </div>
-                                <button id="buy_2" class="w100p button orange myriadproboldcond f28 buybutton">Купить</button>
+                                <button id="buy_2" class="w100p button orange myriadproboldcond f28 buybutton">Заказать</button>
                             </div>
                         </div>
                         <div class="delimiter"></div>
@@ -195,7 +197,7 @@
                                         <span class="value">от 50 000 руб.</span>
                                     </div>
                                 </div>
-                                <button id="buy_3" class="w100p button orange myriadproboldcond f28 buybutton">Купить</button>
+                                <button id="buy_3" class="w100p button orange myriadproboldcond f28 buybutton">Заказать</button>
                             </div>
                         </div>
                     </div>
@@ -253,7 +255,7 @@
                                                validationMessage="Укажите Ваш телефон"
                                                data-bind="value: phone" />
                                     </div>
-                                    <button class="w100p button orange myriadproboldcondit f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказ пробной партии</button>
+                                    <button class="w100p button orange myriadproboldcond f28 buybutton" data-bind="disabled: messageSent, click: commit">Отправить!</button>
                                 </div>
                             </div>
                         </div> <!-- FORM -->
@@ -265,12 +267,147 @@
         </div>
         <div class="hidden" style="display: none">
             
+            <div id="template-gracias">
+                <div class="screen">
+                    <div class="table-wrap" style="height: 100%;">
+                        <div class="row-wrap">
+                            <div class="column-wrap" style="vertical-align: middle;">
+                                <div class="request-call">
+                                    <div class="ptsans gracias">
+                                        Благодарим за заказ, мы свяжемся с Вами<br />
+                                        в самое ближайшее время
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="template-request-call">
+                <div class="screen">
+                    <div class="table-wrap" style="height: 100%;">
+                        <div class="row-wrap">
+                            <div class="column-wrap" style="vertical-align: middle;">
+                                <div class="request-call">
+                                    <div style="text-align: right">
+                                        <span class="cross" data-bind="click: close"></span>
+                                    </div>
+                                    <div class="form popup-form">
+                                        <div class="ptsans f30 center lh30">Заказать звонок</div>
+                                        <div class="f12 center italic b3b3b3" style="padding:15px 0 20px">Наш менеджер перезвонит Вам в ближайшее время</div>
+                                        <div class="center">
+                                            <div class="" style="width: 270px; margin: 0 auto;">
+                                                <div class="relative">
+                                                    <input class="input person" type="text" 
+                                                           validationMessage="Укажите Ваше имя"
+                                                           placeholder="Ваше имя" 
+                                                           data-bind="value: name" />
+                                                </div>
+                                                <div class="relative">
+                                                    <input class="input globe" type="text"
+                                                           validationMessage="Укажите Ваш город"
+                                                           placeholder="Ваш город" 
+                                                           data-bind="value: city" />
+                                                </div>
+                                                <div class="relative">
+                                                    <input class="input phone" type="text"
+                                                           placeholder="Ваш телефон" 
+                                                           data-pattern="+7(999)999-9999"
+                                                           validationMessage="Укажите Ваш телефон"
+                                                           data-bind="value: phone" />
+                                                </div>
+                                                <div>
+                                                <button class="w100p button orange myriadproboldcond f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказать!</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- FORM -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div id="template-message">
                 <span class="k-widget k-tooltip k-tooltip-validation k-invalid-msg" data-for="" role="alert">
                     <span class="k-icon k-warning"> </span>
                     ${text}
                 </span>
             </div>
+
+            <div id="template-request-buy">
+                <div class="screen">
+                    <div class="table-wrap" style="height: 100%;">
+                        <div class="row-wrap">
+                            <div class="column-wrap" style="vertical-align: middle;">
+                                <div class="request-call">
+                                    <div class="right">
+                                        <span class="cross" data-bind="click: close"></span>
+                                    </div>
+                                    
+                                    <div class="buy-form">
+                                        <div class="ptsans f30 center lh30" data-bind="html: title" style="padding-bottom: 20px;"></div>
+                                        <div class="table-wrap">
+                                            <div class="row-wrap">
+                                                <div class="column-wrap" style="vertical-align: middle; height: 120px;" data-bind="html: img">
+                                                </div>
+                                                <div class="column-delimiter" style="width: 25px"></div>
+                                                <div class="column-wrap" style="width: 255px; vertical-align: middle;">
+                                                    <div class="f24 ptsans c5e5e5e">
+                                                        Заполните форму и наш<br />
+                                                        специалист перезвонит Вам<br />
+                                                        в самое ближайшее время
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-wrap">
+                                                <div class="column-wrap" style="vertical-align: bottom; text-align: left">
+                                                    <div class="text" data-bind="html: text"></div>
+                                                    <div class="text bold" data-bind="html: boldtext"></div>
+                                                </div>
+                                                <div class="column-delimiter" style="width: 25px"></div>
+                                                <div class="column-wrap"style="vertical-align: bottom;">
+                                                    <div class="form center">
+                                                        <div class="" style="margin: 0 auto;">
+                                                            <div class="relative">
+                                                                <input class="input person" type="text" 
+                                                                       validationMessage="Укажите Ваше имя"
+                                                                       placeholder="Ваше имя" 
+                                                                       data-bind="value: name" />
+                                                            </div>
+                                                            <div class="relative">
+                                                                <input class="input globe" type="text"
+                                                                       validationMessage="Укажите Ваш город"
+                                                                       placeholder="Ваш город" 
+                                                                       data-bind="value: city" />
+                                                            </div>
+                                                            <div class="relative">
+                                                                <input class="input phone" type="text"
+                                                                       placeholder="Ваш телефон" 
+                                                                       data-pattern="+7(999)999-9999"
+                                                                       validationMessage="Укажите Ваш телефон"
+                                                                       data-bind="value: phone" />
+                                                            </div>
+                                                            <div>
+                                                            <button class="w100p button orange myriadproboldcond f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказать!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- FORM -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             
         </div>
     </body>

@@ -1,84 +1,174 @@
+var gracias = function(){
+    var win = $("<div>").actionWin({
+        template: $("#template-gracias").html(),
+        model: {
+            close: function(){
+                win.close();
+            }
+        }
+    }).data().show(function(){
+        var win = this;
+        setTimeout(function(){
+            win.close();
+        }, 3000);
+    });
+};
+        
 
 (function($){
+    
+    $.fn.actionWin = function(options){
+        var self = this;
+        var TIMEOUT = 1000;
+        var el = this;
+        //console.log("ACTION", arguments, this);
+        var data = {
+            timeout: TIMEOUT,
+            model: {},
+            template: ""
+        };
+        $.extend(data, options, {
+            show: function(cb){
+                data.wrapper = $("<div>", {
+                    css: {
+                        display: "none"
+                    }
+                }).append(kendo.template(data.template)(data.model));
+                $(document.documentElement).append(data.wrapper);
+                console.log("BIND", self, data, data.model);
+                kendo.bind(data.wrapper, data.model);
+                
+                data.wrapper.stop(true, true).fadeIn(data.timeout, function(){(cb) && (cb.call(data, data.wrapper));});
+                return data;
+            },
+            close: function(cb){
+                console.log("CLOSE", data.wrapper);
+                (data.wrapper) && (data.wrapper.stop(true, true).fadeOut(data.timeout, function(){(cb) && (cb.call(data, data.wrapper));}));
+            }
+        });
+        this._data = data;
+        
+        this.data = function(options){
+            (options) && ($.extend(false, data, options));
+            //console.log("DATA", data, options);
+            return data;
+        };
+        
+        return this;
+    };
     
     $(function(){
         console.log("initiated app");
         
-        window.model = kendo.observable({
-            referer: window.referer,
-            title: "",
-            name: "",
-            city: "",
-            phone: "",
-            messageSent: false,
-            commit: function(e){
-                console.log("form commited", e);
-                var form=$(e.target).parents(".form");
-                var errors=false;
-                var input;
-                var template=kendo.template($("#template-message").html());
-                if (errors=(window.model.name=="")||(window.model.name.length>30)){
-                    input = form.find("input.input.person");
-                    input.after(template({text:input.attr("validationMessage")}))
-                        .addClass("errors")
-                        .focus();
-                };
-                if ((!errors) && (errors = (window.model.city=="")||(window.model.city.length>30))){
-                    input = form.find("input.input.globe");
-                    input.after(template({text:input.attr("validationMessage")}))
-                        .addClass("errors")
-                        .focus()
-                };
-                if ((!errors) && (errors=(window.model.phone.length !== 15))){
-                    input = form.find("input.input.phone");
-                    input.after(template({text:input.attr("validationMessage")}))
-                        .addClass("errors")
-                        .focus()
-                };
-                if(!errors){
-                    $(".form .k-widget.k-tooltip.k-tooltip-validation").remove();
-                    var button = $(e.target);
-                    model.title = "Заказ пробной партии."
-                    $.ajax({
-                        url: "/form.php",
-                        type: "post",
-                        dataType: "json",
-                        data: model.toJSON(),
-                        success: function(out){
-                            alert("Ваш заказ успешно отправлен!");
-                            window.model.set("messageSent", true);
-                            $("button.orange").removeClass("orange");
-                        },
-                        error: function(){
-                            alert("ошибки");
-                        }
-                    });
-                };
-            },
-            inputFocusIn: function(e){
-                $(this).attr("data-reserve", $(this).attr("placeholder"));
-                $(this).attr("placeholder", "");
-            },
-            inputFocusOut: function(e){
-                $(this).attr("placeholder", $(this).attr("data-reserve"));
-                $(".form .k-widget.k-tooltip.k-tooltip-validation").remove();
-                $("input.errors").removeClass("errors");
-            }
+        setTimeout(function(){
+            $(".wait-fonts").animate({opacity: 1});
+        }, 500);
+        
+        //gracias();
+        
+        window.model = new Model({
+            title: "Заказ пробной партии"
         });
+
         var form = $(".form");
         kendo.bind(form, window.model);
-        (function(max, input){
-            var length = 0;
-            input.bind("input change", function(){
-                length = this.value.length;
-                this.maxLength = length>=max?max:100;
-            });
-        }(30, $("input.input.person, input.input.globe")));
-        var phoneInput = $("input.input.phone");
-        phoneInput.mask(phoneInput.attr("data-pattern"));
-        form.find("input[type='text']")
-            .focusin(model.inputFocusIn)
-            .focusout(model.inputFocusOut);
+        window.model.open(form);
+        
+        //window.model.extend({}); 
+        var requestModel = new Model({
+                title: "Заказ звонка.",
+                close: function(){
+                    var win = requestCall.data();
+                    win.close();
+            }
+        });
+        console.log($("#requestcall"), requestModel);
+        var requestCall = $("#requestcall").actionWin({
+            timeout: 200,
+            template: $("#template-request-call").html(),
+            model: requestModel
+        })
+        .removeAttr("disabled")
+        .click(function(){
+            requestCall.data().show(requestModel.open);
+        });
+        
+        var buyPacks = {
+            buy_1: {
+                title: "Заказать комплекты автономной газификации<br/ >для домов площадью до 90 кв.м",
+                text: [
+                    "В комплект входит:",
+                    "- Газгольдер наземный V &mdash; 1750 л;",
+                    "- Гибкое соединение TracPipe - 5 м;",
+                    "- Запорная арматура и фитинги;",
+                    "Цена комплекта &mdash; от 115 000 руб.",
+                    "Время монтажа &mdash; 6 часов."
+                ].join("<br />"),
+                boldtext: [
+                    "Ваша прибыль от 30 000 руб.",
+                    "на каждом установленном комплекте"
+                ].join("<br />"),
+                img: '<img src="/img/small_house.png">'
+            },
+            buy_2: {
+                title: "Заказать комплекты автономной газификации для домов площадью от 90 до 140 кв.м",
+                text: [
+                    "В комплект входит:",
+                    "- Газгольдер наземный V &mdash; 1750 л;",
+                    "- Гибкое соединение TracPipe - 5 м;",
+                    "- Запорная арматура и фитинги;",
+                    "Цена комплекта &mdash; от 155 000 руб.",
+                    "Время монтажа &mdash; от 6 часов."
+                ].join("<br />"),
+                boldtext: [
+                    "Ваша прибыль от 40 000 руб.",
+                    "на каждом установленном комплекте"
+                ].join("<br />"),
+                img: '<img src="/img/medium_house.png">'
+            },
+            buy_3: {
+                title: "Заказать комплекты автономной газификации для домов площадью от 140 до 250 кв.м",
+                text: [
+                    "В комплект входит:",
+                    "- Газгольдер наземный V &mdash; 1750 л;",
+                    "- Гибкое соединение TracPipe - 5 м;",
+                    "- Запорная арматура и фитинги;",
+                    "Цена комплекта &mdash; от 210 000 руб.",
+                    "Время монтажа &mdash; до 2 суток.",
+                    "(с учётом земляных работ)"
+                ].join("<br />"),
+                boldtext: [
+                    "Ваша прибыль от 50 000 руб.",
+                    "на каждом установленном комплекте"
+                ].join("<br />"),
+                img: '<img src="/img/big_house.png">'
+            }
+        };
+        for(var i in buyPacks) {
+            (function(button){
+                //console.log(button);
+                var buyModel = new Model({
+                    title: buyPacks[i].title,
+                    text: buyPacks[i].text,
+                    boldtext: buyPacks[i].boldtext,
+                    img: buyPacks[i].img,
+                    close: function(){
+                        button.data().close();
+                    }
+                });
+                button.actionWin({
+                    timeout: 200,
+                    template: kendo.template($("#template-request-buy").html())(buyPacks[i]),
+                    model: buyModel
+                })
+                .removeAttr("disabled")
+                .click(function(){
+                    var data = button.data();
+                    //console.log("CLICK", this, button, data)
+                    data.show(buyModel.open);
+                });
+            }($("#"+i)));
+        };
     });
     
 }(jQuery))

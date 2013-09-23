@@ -32,6 +32,9 @@ html, body {
 
 html {
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #2f2f2f;
 }
 
 body {
@@ -53,9 +56,6 @@ div {
     display: block;
     padding: 40px 100px;
     background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: #2f2f2f;
     background-image: url(/img/bg.png);
     background-position: top center;
     background-repeat: no-repeat;
@@ -119,6 +119,9 @@ div {
 }
 .f16 {
     font-size: 16px;
+}
+.f20 {
+    font-size: 20px;
 }
 .f24 {
     font-size: 24px;
@@ -205,7 +208,9 @@ div {
 .c7f7f7f {
     color: #7f7f7f;
 }
-
+.c5e5e5e    {
+    color: #5e5e5e;
+}
 .w100p {
     width: 100%;
 }
@@ -252,12 +257,14 @@ div {
 }
 
 .input {
+    font-family: Arial, Tahoma, sans-serif;
     font-style: italic;
     margin: 0;
     padding: 0;
     border-width: 0;
     border-color: white;
     width: 100%;
+    font-size: 15px;
 }
 
 .lh30 {
@@ -292,6 +299,9 @@ ul.spec li {
     display: table-cell;
     vertical-align: top;
     text-align: center;
+}
+.column-delimiter{
+    display: table-cell;
 }
 .delimiter {
     background-image: url(/img/y_dash.png);
@@ -350,4 +360,65 @@ ul.spec li {
     position: absolute;
     left: 30px;
     top: 30px;
+}
+
+.request-call {
+    padding: 5px;
+    background-color: #e6e5e5;
+    border: 1px solid white;
+    box-shadow: 0 0 5px 0px #757575;
+    top: 50px;
+    display: inline-block;
+}
+
+span.cross {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-image: url(/img/cross_orange.png);
+    display: inline-block;
+}
+
+.screen {
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup-form {
+    padding: 0px 0 20px;
+}
+
+.gracias {
+    padding: 20px 90px;
+    font-size: 20px;
+}
+
+.wait-fonts {
+    opacity: 0;
+}
+
+.buy-form   {
+    padding: 15px; 
+    width: 550px;
+}
+
+.buy-form .form {
+    padding: 0;
+}
+
+.buy-form .text {
+    font-size: 14px;
+    color: #767676;
+    line-height: 24px;
+}
+.buy-form .text.bold {
+    font-weight: bold;
+    color: #363636;
+}
+.buy-form .input {
+    width: 200px;
 }

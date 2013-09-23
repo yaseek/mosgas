@@ -5,7 +5,7 @@ header("Content-Type: application/json");
 require_once 'core/class.phpmailer.php';
 
 function Text($str){
-    return iconv("utf-8", "windows-1251", $str);
+    return str_ireplace("<br/ >", " ", iconv("utf-8", "windows-1251", $str));
 };
 
 $config_path = $_SERVER["DOCUMENT_ROOT"]."/core/config.json";
@@ -21,7 +21,9 @@ if (count($_POST) > 0) {
     $mail->Subject=Text($config->sitename.$_POST["title"]);
     for($i=0; $i<count($config->mailto); $i++) {
         $item = $config->mailto[$i];
-        $mail->AddAddress($item->email, Text($item->name));
+        if (!$item->disabled){
+            $mail->AddAddress($item->email, Text($item->name));
+        }
     };
     //$mail->AddAddress("e@bogatyreva.com", Text("Евгения Богатырёва"));
     $mail->From="do-not-reply@".$_SERVER["SERVER_NAME"];
