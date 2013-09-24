@@ -27,14 +27,14 @@
             <div class="content">
                 <div class="left">
                     <div class="center f36 pfdin">МОСГАЗИФИКАЦИЯ.РФ</div>
-                    <div class="table-wrap f16 ">
+                    <div class="table-wrap f16">
                         <div class="row-wrap">
                             <div class="column-wrap left-align" style="width: 10px">Оптовые</div>
                             <div class="column-wrap center">поставки</div>
                             <div class="column-wrap center">по</div>
                             <div class="column-wrap center">РФ</div>
                             <div class="column-wrap center">для</div>
-                            <div class="column-wrap right-align" style="width: 100px">предприятий,</div>
+                            <div class="column-wrap right-align" style="width: 100px">предприятий</div>
                         </div>
                     </div>
                     <div class="center f16">
@@ -53,7 +53,7 @@
                 <div style="padding: 75px 0 55px">
                     <div style="display: inline-block; margin: 0 auto;">
                         <div class="center f41 myriadproboldcond">ЗАРАБАТЫВАЙТЕ ОТ 30 000 РУБЛЕЙ НА КАЖДОЙ УСТАНОВКЕ</div>
-                        <div class="table-wrap f30 myriadproboldcond">
+                        <div class="table-wrap f30 myriadproboldcond widefont">
                             <div class="row-wrap">
                                 <div class="column-wrap left-align">Расширьте</div>
                                 <div class="column-wrap center">сферу</div>
@@ -265,10 +265,12 @@
                 
             </div>
         </div>
+        
         <div class="hidden" style="display: none">
             
             <div id="template-gracias">
                 <div class="screen">
+                    <div class="moir"></div>
                     <div class="table-wrap" style="height: 100%;">
                         <div class="row-wrap">
                             <div class="column-wrap" style="vertical-align: middle;">
@@ -286,6 +288,7 @@
             
             <div id="template-request-call">
                 <div class="screen">
+                    <div class="moir"></div>
                     <div class="table-wrap" style="height: 100%;">
                         <div class="row-wrap">
                             <div class="column-wrap" style="vertical-align: middle;">
@@ -339,6 +342,7 @@
 
             <div id="template-request-buy">
                 <div class="screen">
+                    <div class="moir"></div>
                     <div class="table-wrap" style="height: 100%;">
                         <div class="row-wrap">
                             <div class="column-wrap" style="vertical-align: middle;">
