@@ -20,48 +20,59 @@
         <script type="text/javascript" src="/js/kendo.userevents.min.js"></script>
         <script type="text/javascript" src="/js/kendo.validator.min.js"></script>
         <script type="text/javascript" src="/js/model.js"></script>
-        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/main.js?_<?=time()?>"></script>
     </head>
-    <body>
+    <body style="opacity: 0;">
         <div class="wrapper">
             <div class="content">
                 <div class="left">
-                    <div class="center f36 pfdin">МОСГАЗИФИКАЦИЯ.РФ</div>
-                    <div class="table-wrap f16">
+                    <!--div class="center f38 pfdin">МОСГАЗИФИКАЦИЯ.РФ</div-->
+                    <img src="/img/logo.png" style="width: 337px"/>
+                    <!--div class="f16 center bold">
+                        Оптовые<span style="letter-spacing: +0.5px">поставки по РФ для предприятий</span>
+                    </div>
+                    <div class="f16 center bold">
+                        <span>обслуживающих газовое хозяйство</span>
+                    </div-->
+                    
+                    <div class="table-wrap f16 bold">
                         <div class="row-wrap">
                             <div class="column-wrap left-align" style="width: 10px">Оптовые</div>
                             <div class="column-wrap center">поставки</div>
                             <div class="column-wrap center">по</div>
                             <div class="column-wrap center">РФ</div>
                             <div class="column-wrap center">для</div>
-                            <div class="column-wrap right-align" style="width: 100px">предприятий,</div>
+                            <div class="column-wrap right-align" style="width: 100px">предприятий</div>
                         </div>
                     </div>
-                    <div class="table-wrap f16">
+                    <div class="table-wrap f16 bold">
                         <div class="row-wrap">
                             <div class="column-wrap center">обслуживающих газовое хозяйство</div>
                         </div>
                     </div>
                 </div>
                 <div class="right" style="width: 205px;" >
-                    <div class="right-align wait-fonts" style="height: 32px; padding: 5px 0">
+                    <div class="wait-fonts center" style="height: 32px; padding: 5px 0">
+                        <span>
                         <span class="f24 myriadprocond c7f7f7f">Тел.</span>
                         <span class="f26 pfdin">(495) 233-88-72</span>
+                        </span>
                     </div>
                     <button id="requestcall" class="f20 pfdin button orange w100p">Заказать звонок</button>
                 </div>
                 <div class="clear"></div>
                 
-                <div style="padding: 75px 0 55px">
+                <div class="center" style="padding: 75px 0 55px">
                     <div style="display: inline-block; margin: 0 auto;">
                         <div class="center f41 myriadproboldcond">ЗАРАБАТЫВАЙТЕ ОТ 30 000 РУБЛЕЙ НА КАЖДОЙ УСТАНОВКЕ</div>
+                        <!--div class="f30 myriadproboldcond widefont">Расширьте сферу деятельности, займитесь автономной газификацией</div-->
                         <div class="table-wrap f30 myriadproboldcond widefont">
                             <div class="row-wrap">
-                                <div class="column-wrap left-align">Расширьте</div>
+                                <div class="column-wrap left-align" style="letter-spacing: 2px;">Расширьте</div>
                                 <div class="column-wrap center">сферу</div>
-                                <div class="column-wrap center">деятельности</div>
-                                <div class="column-wrap center">займитесь</div>
-                                <div class="column-wrap center">автономной</div>
+                                <div class="column-wrap center">деятельности,</div>
+                                <div class="column-wrap right-align">займитесь</div>
+                                <div class="column-wrap right-align">автономной</div>
                                 <div class="column-wrap right-align">газификацией</div>
                             </div>
                         </div>
@@ -132,10 +143,10 @@
                                     <div class="regular">
                                         <span class="key">Время установки</span>
                                         &nbsp;&mdash;&nbsp;
-                                        <span class="value">6 часов</span>
+                                        <span class="value">до 6 часов</span>
                                     </div>
                                     <div class="profit">
-                                        <span class="key">Ваша прибыль</span>
+                                        <span class="key bold">Ваша прибыль</span>
                                         &nbsp;&mdash;&nbsp;
                                         <span class="value">от 30 000 руб.</span>
                                     </div>
@@ -163,7 +174,7 @@
                                         <span class="value">от 6 часов</span>
                                     </div>
                                     <div class="profit">
-                                        <span class="key">Ваша прибыль</span>
+                                        <span class="key bold">Ваша прибыль</span>
                                         &nbsp;&mdash;&nbsp;
                                         <span class="value">от 40 000 руб.</span>
                                     </div>
@@ -194,7 +205,7 @@
                                         </div>
                                     </div>
                                     <div class="profit">
-                                        <span class="key">Ваша прибыль</span>
+                                        <span class="key bold">Ваша прибыль</span>
                                         &nbsp;&mdash;&nbsp;
                                         <span class="value">от 50 000 руб.</span>
                                     </div>
@@ -360,7 +371,7 @@
                                                 <div class="column-wrap" style="vertical-align: middle; height: 120px;" data-bind="html: img">
                                                 </div>
                                                 <div class="column-delimiter" style="width: 25px"></div>
-                                                <div class="column-wrap" style="width: 255px; vertical-align: middle;">
+                                                <div class="column-wrap" style="width: 245px; vertical-align: middle;">
                                                     <div class="f24 ptsans c5e5e5e">
                                                         Заполните форму и наш<br />
                                                         специалист перезвонит Вам<br />
@@ -371,7 +382,7 @@
                                             <div class="row-wrap">
                                                 <div class="column-wrap" style="vertical-align: bottom; text-align: left">
                                                     <div class="text" data-bind="html: text"></div>
-                                                    <div class="text bold" data-bind="html: boldtext"></div>
+                                                    <div class="text bold" data-bind="html: boldtext" style="position: relative; bottom: -5px;"></div>
                                                 </div>
                                                 <div class="column-delimiter" style="width: 25px"></div>
                                                 <div class="column-wrap"style="vertical-align: bottom;">
@@ -397,7 +408,9 @@
                                                                        data-bind="value: phone" />
                                                             </div>
                                                             <div>
-                                                            <button class="w100p button orange myriadproboldcond f28 buybutton" data-bind="disabled: messageSent, click: commit">Заказать!</button>
+                                                            <button class="w100p button orange myriadproboldcond f28 buybutton" 
+                                                                    data-bind="disabled: messageSent, click: commit"
+                                                                    style="padding: 0;">Заказать!</button>
                                                             </div>
                                                         </div>
                                                     </div> <!-- FORM -->

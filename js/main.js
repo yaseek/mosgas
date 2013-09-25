@@ -1,3 +1,12 @@
+window.onload = function(){
+    console.log("LOAD");
+    $(function(){
+        $("body").animate({opacity: 1}, 500);
+    });
+};
+    
+
+
 var gracias = function(){
     var win = $("<div>").actionWin({
         template: $("#template-gracias").html(),
@@ -102,7 +111,7 @@ var gracias = function(){
                     "- Гибкое соединение TracPipe - 5 м;",
                     "- Запорная арматура и фитинги;",
                     "Цена комплекта &mdash; от 115 000 руб.",
-                    "Время монтажа &mdash; 6 часов."
+                    "Время монтажа &mdash; до 6 часов."
                 ].join("<br />"),
                 boldtext: [
                     "Ваша прибыль от 30 000 руб.",

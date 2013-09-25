@@ -117,6 +117,9 @@ div {
 .f14 {
     font-size: 14px;
 }
+.f15 {
+    font-size: 15px;
+}
 .f16 {
     font-size: 16px;
 }
@@ -140,6 +143,9 @@ div {
 }
 .f36 {
     font-size: 36px;
+}
+.f38 {
+    font-size: 38px;
 }
 .f39 {
     font-size: 39px;
@@ -405,6 +411,7 @@ span.cross {
 .buy-form   {
     padding: 15px; 
     width: 550px;
+    vertical-align: baseline;
 }
 
 .buy-form .form {
@@ -412,12 +419,15 @@ span.cross {
 }
 
 .buy-form .text {
-    font-size: 14px;
+    font-size: 15px;
     color: #767676;
     line-height: 24px;
 }
-.buy-form .text.bold {
+.bold {
     font-weight: bold;
+}
+
+.buy-form .text.bold {
     color: #363636;
 }
 .buy-form .input {
