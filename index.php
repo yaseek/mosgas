@@ -34,14 +34,16 @@
                             <div class="column-wrap center">по</div>
                             <div class="column-wrap center">РФ</div>
                             <div class="column-wrap center">для</div>
-                            <div class="column-wrap right-align" style="width: 100px">предприятий</div>
+                            <div class="column-wrap right-align" style="width: 100px">предприятий,</div>
                         </div>
                     </div>
-                    <div class="center f16">
-                        обслуживающих газовое хозяйство
+                    <div class="table-wrap f16">
+                        <div class="row-wrap">
+                            <div class="column-wrap center">обслуживающих газовое хозяйство</div>
+                        </div>
                     </div>
                 </div>
-                <div class="right" style="width: 197px;" >
+                <div class="right" style="width: 205px;" >
                     <div class="right-align wait-fonts" style="height: 32px; padding: 5px 0">
                         <span class="f24 myriadprocond c7f7f7f">Тел.</span>
                         <span class="f26 pfdin">(495) 233-88-72</span>
@@ -57,7 +59,7 @@
                             <div class="row-wrap">
                                 <div class="column-wrap left-align">Расширьте</div>
                                 <div class="column-wrap center">сферу</div>
-                                <div class="column-wrap center">деятельности,</div>
+                                <div class="column-wrap center">деятельности</div>
                                 <div class="column-wrap center">займитесь</div>
                                 <div class="column-wrap center">автономной</div>
                                 <div class="column-wrap right-align">газификацией</div>
