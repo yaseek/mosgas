@@ -1,9 +1,22 @@
+<?
+
+$title = "МОСГАЗИФИКАЦИЯ.РФ | Автономные системы газификации";
+$description = "Оптовые поставки систем автономной газификации пр-ва Италии. Обучение и консультации. Доставка по РФ. Вся продукция сертифицирована в РФ.";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head> 
-        <title>МОСГАЗИФИКАЦИЯ.РФ</title>
+        <title><?=$title?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
+        <meta property="og:title" content="<?=$title?>">
+        <meta property="og:description" content="<?=$description?>">
+
+        <meta name="title" content="<?=$title?>">
+        <meta name="description" content="<?=$description?>">
+
         <script type="text/javascript">
             window.referer = "<?=$_SERVER['HTTP_REFERER']?>";
         </script>
@@ -27,7 +40,8 @@
             <div class="content">
                 <div class="left">
                     <!--div class="center f38 pfdin">МОСГАЗИФИКАЦИЯ.РФ</div-->
-                    <img src="/img/logo.png" style="width: 337px"/>
+                    <!--img src="/img/logo_plus.png" alt="МОСГАЗИФИКАЦИЯ.РФ. Оптовые поставки по РФ для предприятий,обслуживающих газовое хозяйство" /-->
+                    <img src="/img/logo_plus.png" alt="МОСГАЗИФИКАЦИЯ.РФ. Оптовые поставки по РФ для предприятий,обслуживающих газовое хозяйство" />
                     <!--div class="f16 center bold">
                         Оптовые<span style="letter-spacing: +0.5px">поставки по РФ для предприятий</span>
                     </div>
@@ -35,37 +49,44 @@
                         <span>обслуживающих газовое хозяйство</span>
                     </div-->
                     
-                    <div class="table-wrap f16 bold">
+                    <!--div class="table-wrap f16 bold">
                         <div class="row-wrap">
                             <div class="column-wrap left-align" style="width: 10px">Оптовые</div>
                             <div class="column-wrap center">поставки</div>
                             <div class="column-wrap center">по</div>
                             <div class="column-wrap center">РФ</div>
                             <div class="column-wrap center">для</div>
-                            <div class="column-wrap right-align" style="width: 100px">предприятий</div>
+                            <div class="column-wrap right-align" style="width: 100px">&nbsp;предприятий</div>
                         </div>
                     </div>
                     <div class="table-wrap f16 bold">
                         <div class="row-wrap">
                             <div class="column-wrap center">обслуживающих газовое хозяйство</div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
-                <div class="right" style="width: 205px;" >
+                <div class="right" style="" >
                     <div class="wait-fonts center" style="height: 32px; padding: 5px 0">
-                        <span>
+                        <a class="tel" href="tel:+74952338872">
+                            <img src="/img/tel.png" alt="+7(495)233-88-72" />
+                        </a>
+                        <!--span>
+                            <a class="tel" href="tel:+74952338872">
                         <span class="f24 myriadprocond c7f7f7f">Тел.</span>
-                        <span class="f26 pfdin">(495) 233-88-72</span>
-                        </span>
+                            
+                                <span class="f26 pfdin">(495) 233-88-72</span>
+                            </a>
+                        </span-->
                     </div>
-                    <button id="requestcall" class="f20 pfdin button orange w100p">Заказать звонок</button>
+                    <button id="requestcall" class="f20 ptsanswb button orange w100p">Заказать звонок</button>
                 </div>
                 <div class="clear"></div>
                 
                 <div class="center" style="padding: 75px 0 55px">
                     <div style="display: inline-block; margin: 0 auto;">
-                        <div class="center f41 myriadproboldcond">ЗАРАБАТЫВАЙТЕ ОТ 30 000 РУБЛЕЙ НА КАЖДОЙ УСТАНОВКЕ</div>
-                        <!--div class="f30 myriadproboldcond widefont">Расширьте сферу деятельности, займитесь автономной газификацией</div-->
+                        <img src="/img/title.png" 
+                             alt="Зарабатывайте от 30000 рублей на каждой установке. Расширьте сферу деятельности, займитесь автономной газификацией" />
+                        <!--div class="center f41 myriadproboldcond">ЗАРАБАТЫВАЙТЕ ОТ 30 000 РУБЛЕЙ НА КАЖДОЙ УСТАНОВКЕ</div>
                         <div class="table-wrap f30 myriadproboldcond widefont">
                             <div class="row-wrap">
                                 <div class="column-wrap left-align" style="letter-spacing: 2px;">Расширьте</div>
@@ -75,7 +96,7 @@
                                 <div class="column-wrap right-align">автономной</div>
                                 <div class="column-wrap right-align">газификацией</div>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                 </div>
                
@@ -93,18 +114,21 @@
                                         <input class="input person" type="text" 
                                                validationMessage="Укажите Ваше имя"
                                                placeholder="Ваше имя" 
+                                               title="Ваше имя"
                                                data-bind="value: name" />
                                     </div>
                                     <div class="relative">
                                         <input class="input globe" type="text"
                                                validationMessage="Укажите Ваш город"
                                                placeholder="Ваш город" 
+                                               title="Ваш город"
                                                data-bind="value: city" />
                                     </div>
                                     <div class="relative">
                                         <input class="input phone" type="text"
                                                placeholder="Ваш телефон" 
                                                data-pattern="+7(999)999-9999"
+                                               title="Ваш телефон"
                                                validationMessage="Укажите Ваш телефон"
                                                data-bind="value: phone" />
                                     </div>
@@ -171,7 +195,7 @@
                                     <div class="regular">
                                         <span class="key">Время установки</span>
                                         &nbsp;&mdash;&nbsp;
-                                        <span class="value">от 6 часов</span>
+                                        <span class="value">до 6 часов</span>
                                     </div>
                                     <div class="profit">
                                         <span class="key bold">Ваша прибыль</span>
@@ -253,18 +277,21 @@
                                         <input class="input person" type="text" 
                                                validationMessage="Укажите Ваше имя"
                                                placeholder="Ваше имя" 
+                                               title="Ваше имя"
                                                data-bind="value: name" />
                                     </div>
                                     <div class="relative">
                                         <input class="input globe" type="text"
                                                validationMessage="Укажите Ваш город"
                                                placeholder="Ваш город" 
+                                               title="Ваш город"
                                                data-bind="value: city" />
                                     </div>
                                     <div class="relative">
                                         <input class="input phone" type="text"
                                                placeholder="Ваш телефон" 
                                                data-pattern="+7(999)999-9999"
+                                               title="Ваш телефон"
                                                validationMessage="Укажите Ваш телефон"
                                                data-bind="value: phone" />
                                     </div>
@@ -318,18 +345,21 @@
                                                     <input class="input person" type="text" 
                                                            validationMessage="Укажите Ваше имя"
                                                            placeholder="Ваше имя" 
+                                                           title="Ваше имя"
                                                            data-bind="value: name" />
                                                 </div>
                                                 <div class="relative">
                                                     <input class="input globe" type="text"
                                                            validationMessage="Укажите Ваш город"
                                                            placeholder="Ваш город" 
+                                                           title="Ваш город"
                                                            data-bind="value: city" />
                                                 </div>
                                                 <div class="relative">
                                                     <input class="input phone" type="text"
                                                            placeholder="Ваш телефон" 
                                                            data-pattern="+7(999)999-9999"
+                                                           title="Ваш телефон"
                                                            validationMessage="Укажите Ваш телефон"
                                                            data-bind="value: phone" />
                                                 </div>
@@ -371,7 +401,7 @@
                                                 <div class="column-wrap" style="vertical-align: middle; height: 120px;" data-bind="html: img">
                                                 </div>
                                                 <div class="column-delimiter" style="width: 25px"></div>
-                                                <div class="column-wrap" style="width: 245px; vertical-align: middle;">
+                                                <div class="column-wrap" style="width: 240px; vertical-align: middle;">
                                                     <div class="f24 ptsans c5e5e5e">
                                                         Заполните форму и наш<br />
                                                         специалист перезвонит Вам<br />
@@ -392,18 +422,21 @@
                                                                 <input class="input person" type="text" 
                                                                        validationMessage="Укажите Ваше имя"
                                                                        placeholder="Ваше имя" 
+                                                                       title="Ваше имя"
                                                                        data-bind="value: name" />
                                                             </div>
                                                             <div class="relative">
                                                                 <input class="input globe" type="text"
                                                                        validationMessage="Укажите Ваш город"
                                                                        placeholder="Ваш город" 
+                                                                       title="Ваш город"
                                                                        data-bind="value: city" />
                                                             </div>
                                                             <div class="relative">
                                                                 <input class="input phone" type="text"
                                                                        placeholder="Ваш телефон" 
                                                                        data-pattern="+7(999)999-9999"
+                                                                       title="Ваш телефон"
                                                                        validationMessage="Укажите Ваш телефон"
                                                                        data-bind="value: phone" />
                                                             </div>

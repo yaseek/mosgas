@@ -21,9 +21,24 @@
 }
 @font-face  {
     font-family: PTSans;
-    src:    url(/css/fonts/PTN57F.ttf);
+    src:    url(/css/fonts/PTN57F.ttf );
 }
-
+@font-face  {
+    font-family: PTSansW;
+    src:    url(/css/fonts/PT_Sans-Web-Regular.ttf  );
+}
+@font-face  {
+    font-family: PTSansWB;
+    src:    url(/css/fonts/PT_Sans-Web-Bold.ttf  );
+}
+@font-face  {
+    font-family: PTSansWI;
+    src:    url(/css/fonts/PT_Sans-Web-Italic.ttf  );
+}
+@font-face  {
+    font-family: PTSansWBI;
+    src:    url(/css/fonts/PT_Sans-Web-BoldItalic.ttf  );
+}
 
 html, body {
     margin: 0;
@@ -184,23 +199,31 @@ div {
 }
 
 .pfdin {
-    font-family: PFDinTextCondPro-Medium, Arial;
+    font-family: PFDinTextCondPro-Medium, PTSansWB;
 }
 
 .myriadprocond {
-    font-family: MyriadProCond, MyriadProWeb, Arial;
+    font-family: MyriadProCond, MyriadProWeb, PTSans;
 }
 
 .myriadproboldcond {
-    font-family: "MyriadProBoldCond", MyriadProWeb, Arial;
+    font-family: "MyriadProBoldCond", PTSansWB;
 }
 
 .myriadproboldcondit {
-    font-family: MyriadPro-BoldCondIt, MyriadProWeb, Arial;
+    font-family: MyriadPro-BoldCondIt, PTSansWBI;
 }
 
 .ptsans {
     font-family: PTSans;
+}
+
+.ptsanswb {
+    font-family: PTSansWB;
+}
+
+.ptsanswbi {
+    font-family: PTSansWBI;
 }
 
 .a3a3a3 {
@@ -230,12 +253,22 @@ div {
     padding: 20px 0 35px;
 }
 
+a.tel   {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a.tel img {
+    border-width: 0;
+    border-color: transparent;
+}
+
 .form .input {
     background-color: white;
     border-color: transparent;
     border-width: 2px;
     margin: 3px 0;
-    width: 228px;
+    width: 223px;
     padding: 8px;
     padding-left: 35px;
     border-radius: 5px;
@@ -324,7 +357,7 @@ ul.spec li {
 }
 
 .buyblock .subscribe {
-    font-family: MyriadPro-BoldCondIt, MyriadProWeb, Arial;
+    font-family: MyriadPro-BoldCondIt, MyriadProWeb, PTSansWBI;
     font-size: 22px;
     color: black;
 }
@@ -431,7 +464,7 @@ span.cross {
     color: #363636;
 }
 .buy-form .input {
-    width: 200px;
+    width: 190px;
 }
 
 .moir   {

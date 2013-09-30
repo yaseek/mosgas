@@ -5,7 +5,7 @@ header("Content-Type: application/json");
 require_once 'core/class.phpmailer.php';
 
 function Text($str){
-    return str_ireplace("<br/ >", " ", iconv("utf-8", "windows-1251", $str));
+    return str_ireplace("<br />", " ", iconv("utf-8", "windows-1251", $str));
 };
 
 $config_path = $_SERVER["DOCUMENT_ROOT"]."/core/config.json";
