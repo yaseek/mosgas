@@ -49,8 +49,8 @@ var Model;
                         success: function(out){
                             //console.log("Ваш заказ успешно отправлен!", this);
                             gracias();
-                            model.set("messageSent", true);
-                            $("button.orange").removeClass("orange").attr("disabled", "disabled");
+                            //model.set("messageSent", true);
+                            //$("button.orange").removeClass("orange").attr("disabled", "disabled");
                             model.close();
                         },
                         error: function(){

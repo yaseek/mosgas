@@ -2,8 +2,6 @@
     "account": 0,
     "sitename": "Газификация.",
     "mailto": [
-        { "email": "ab@izh.com", "name": "Андрей Бабкин"},
-        { "email": "e@bogatyreva.com", "name": "Евгения Богатырёва"},
-        { "disabled": true, "email": "678878@mail.ru", "name": "Мальцев Сергей Эдуардович" }
+        { "email": "678878@mail.ru", "name": "Мальцев Сергей Эдуардович" }
     ]
 }

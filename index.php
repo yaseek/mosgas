@@ -395,7 +395,7 @@ $description = "Оптовые поставки систем автономно�
                                     </div>
                                     
                                     <div class="buy-form">
-                                        <div class="ptsans f30 center lh30" data-bind="html: title" style="padding-bottom: 20px;"></div>
+                                        <div class="ptsans f30 center lh30" data-bind="html: title_win" style="padding-bottom: 20px;"></div>
                                         <div class="table-wrap">
                                             <div class="row-wrap">
                                                 <div class="column-wrap" style="vertical-align: middle; height: 120px;" data-bind="html: img">

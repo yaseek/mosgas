@@ -26,7 +26,8 @@ if (count($_POST) > 0) {
         }
     };
     //$mail->AddAddress("e@bogatyreva.com", Text("Евгения Богатырёва"));
-    $mail->From="do-not-reply@".$_SERVER["SERVER_NAME"];
+    $mail->From="do_not_reply@".$_SERVER["SERVER_NAME"];
+    $mail->Sender = $mail->From;
     $mail->FromName=Text("Диспетчер МосГаз");
     ob_start();
     ?>
@@ -49,8 +50,8 @@ http://<?=$_SERVER["SERVER_NAME"]?>
     
     //$mail->IsHTML(true);
     $mail->Body=Text($body);
-    $mail->Send();
 
+    $mail->Send();
     echo json_encode(array(
             "result"=>"ok",
             "post"=>$_POST

@@ -105,6 +105,7 @@ var gracias = function(){
         var buyPacks = {
             buy_1: {
                 title: "Заказать комплекты автономной газификации <br />для домов площадью до 90 кв.м",
+                subject: "Заказ для дома 90 кв.м.",
                 text: [
                     "В комплект входит:",
                     "- Газгольдер наземный V &mdash; 1750 л;",
@@ -121,6 +122,7 @@ var gracias = function(){
             },
             buy_2: {
                 title: "Заказать комплекты автономной газификации <br />для домов площадью от 90 до 140 кв.м",
+                subject: "Заказ для дома 140 кв.м.",
                 text: [
                     "В комплект входит:",
                     "- Газгольдер наземный V &mdash; 1750 л;",
@@ -137,6 +139,7 @@ var gracias = function(){
             },
             buy_3: {
                 title: "Заказать комплекты автономной газификации <br />для домов площадью от 140 до 250 кв.м",
+                subject: "Заказ для дома 250 кв.м.",
                 text: [
                     "В комплект входит:",
                     "- Газгольдер подземный V &mdash; 4700 л;",
@@ -157,7 +160,8 @@ var gracias = function(){
             (function(button){
                 //console.log(button);
                 var buyModel = new Model({
-                    title: buyPacks[i].title,
+                    title_win: buyPacks[i].title,
+                    title: buyPacks[i].subject,
                     text: buyPacks[i].text,
                     boldtext: buyPacks[i].boldtext,
                     img: buyPacks[i].img,
